@@ -21,9 +21,19 @@ Again, a training script to discover BeautifulSoup
 Here's thing get more complex, it's a script to obtain all the link for the formation in the site. 
 The structure was specific hence tough. The page are loaded dynamically with AJAX and need some specification if you want to obtain all the link in all the pages.
 
+The script will return the "formation_link.txt". I put him in the github repository.
+
 ## More complex scraping with tripadvisor (webscraping_tripadvisor)
 
 Surely this script could be simplified, I will try to update him as soon as possible.
+
+The script will return the "trip_advisor_database.csv". I put him in the github repository.
+
+## More complex scraping with wikipedia (scraping_wiki2)
+
+This script aims to return data of all the link referenced in animation movie. Like productor, budget, cast and so on. 
+
+The script will return the "data_wiki2.json". I put him in the github repository.
 
 ## Basic scraping with scrapy (scrapy_spider)
 
@@ -32,7 +42,7 @@ This script aim to familiarize myself with Scrapy.
 
 ## Future Development
 
-- Develop more complxe Scrapy scripts
+- Develop more complexe Scrapy scripts
 
 - Try and familiarize myself with Selenium
 
