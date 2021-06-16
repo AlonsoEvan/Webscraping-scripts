@@ -12,6 +12,8 @@ Here's some scripts who aim to scrape some websites. This kind of work is really
 
 - Develop more complexe Scrapy scripts
 
-- Try and familiarize myself with Selenium
+- Became efficient with Selenium
 
 - Became very efficient with BeautifSoup.
+
+- Use Selenium and BeautifulSoup together to have more room for improvements !
