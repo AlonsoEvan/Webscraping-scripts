@@ -79,9 +79,9 @@ for x in range(n): #iterate over n pages to get the hotels links
 	time.sleep(3)
 
 
+#linksfinal = ['https://www.tripadvisor.ca/Hotel_Review-g186338-d672863-Reviews-or5-Park_Plaza_County_Hall_London-London_England.html']
 
-
-j = 3 #number of pages of comments from each hotels
+j = 2 #number of pages of comments from each hotels
 
 for url in linksfinal: 
 
@@ -114,13 +114,13 @@ for url in linksfinal:
 			rat1 = (str(rat))[2]
 			notes.append(rat1)
 
+			
+
+			datereal = container.find("div", class_= "_2fxQ4TOx").text
+			datereal = datereal.replace(container.find("a", class_= "ui_header_link _1r_My98y").text, '').replace(' wrote a review',' ')
+			dates.append(datereal)
+
 			time.sleep(3)
-
-
-			#datereal = container.find("div", class_= "_2fxQ4TOx").text
-			#date = datereal[-9:]
-
-			#dates.append(date)
 
 		nextpages = driver.find_element_by_xpath('//a[@class="ui_button nav next primary "]')
 
@@ -141,14 +141,16 @@ for url in linksfinal:
 	data = pd.DataFrame({
 	'comms' : comms,
 	'notes' : notes,
-	#'dates' : dates
+	'dates' : dates
 	})
 
 
-
-	#data['dates'] = pd.to_datetime(data['dates']).dt.date
-	#data['dates'] = pd.to_datetime(data['dates'])
-	#data['dates'] = data.dates.dt.strftime('%Y-%m')
+	try:
+		data['dates'] = pd.to_datetime(data['dates']).dt.date
+		data['dates'] = pd.to_datetime(data['dates'])
+		data['dates'] = data.dates.dt.strftime('%Y-%m')
+	except:
+		pass
 
 
 
